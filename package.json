@@ -12,11 +12,16 @@
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "components": "^0.1.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.4",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
+    "styled": "^1.0.0",
+    "styled-components": "^6.0.8",
     "typescript": "5.2.2"
   }
 }

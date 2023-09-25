@@ -20,7 +20,7 @@ function Footer() {
       <nav>
         <div className="logo-con">
           <div className="logo">
-            <Image src={logo} width={36} alt="logo" />
+            <Image src={logo} width={26} alt="logo" />
             <h2>Logo</h2>
           </div>
           <div className="input">
@@ -69,7 +69,7 @@ function Footer() {
 const FooterStyled = styled.footer`
   position: relative;
   z-index: 10;
-  padding: 5rem 10rem 0 10rem;
+  padding: 2rem 10rem 0 10rem;
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
 
@@ -140,7 +140,7 @@ const FooterStyled = styled.footer`
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       h4 {
-        font-size: 1.8rem;
+        font-size: 1rem;
         margin-bottom: 1.5rem;
       }
 

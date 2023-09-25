@@ -58,7 +58,7 @@ const FullpageStyled = styled.div`
     border: 1px solid var(--color-border);
     transition: border 0.3s ease-in-out;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: -2rem;
 
     img {
       padding: 1.5rem;

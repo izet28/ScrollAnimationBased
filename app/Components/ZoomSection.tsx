@@ -99,6 +99,8 @@ const ZoomStyled = styled.div`
   overflow: hidden;
   border-radius: 8px;
   border: 1px solid var(--color-border);
+  margin-top: -17rem;
+  margin-bottom: -9rem;
 
   .image {
     border-radius: 8px;

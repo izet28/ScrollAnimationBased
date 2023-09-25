@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import styled from "styled-components";
 import { FaRocket, FaWallet } from "react-icons/fa";
 import { Abril_Fatface } from "next/font/google";
-import hover3d from "../../utils/hover";
+import Hover3d from "../../utils/hover";
 import { transform } from "typescript";
 
 const abril = Abril_Fatface({
@@ -18,12 +18,12 @@ const abril = Abril_Fatface({
 function Header() {
   const hero = useRef<HTMLDivElement>(null);
 
-  const hoverHero = hover3d(hero, {
+  const hoverHero = Hover3d(hero, {
     x: 30,
     y: -40,
     z: 30,
   });
-  const imageHero = hover3d(hero, {
+  const imageHero = Hover3d(hero, {
     x: 20,
     y: -5,
     z: 11,

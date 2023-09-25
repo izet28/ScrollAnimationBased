@@ -2,14 +2,14 @@
 
 import React, { useRef } from "react";
 import styled from "styled-components";
-import hover3d from "../utils/hover";
+import Hover3d from "../utils/hover";
 import Image from "next/image";
 
 function ZoomSection() {
   const hero = useRef<HTMLDivElement>(null);
-  const hover = hover3d(hero, { x: -5, y: 10, z: 4 });
-  const hover2 = hover3d(hero, { x: 50, y: 20, z: 7 });
-  const hover3 = hover3d(hero, { x: -40, y: -20, z: -5 });
+  const hover = Hover3d(hero, { x: -5, y: 10, z: 4 });
+  const hover2 = Hover3d(hero, { x: 50, y: 20, z: 7 });
+  const hover3 = Hover3d(hero, { x: -40, y: -20, z: -5 });
 
   return (
     <ZoomStyled ref={hero}>

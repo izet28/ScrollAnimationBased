@@ -34,7 +34,7 @@ export default function Home() {
       <Header />
       <MainStyled>
         <SectionLayout>
-          <HorizontalWrapper height="45rem" direction={-1400}>
+          <HorizontalWrapper height="15rem" direction={-800}>
             <div className="cards">
               {cards.map((card, index) => {
                 return (
@@ -51,7 +51,7 @@ export default function Home() {
         </SectionLayout>
         <Fullpage />
         <SectionLayout>
-          <HorizontalWrapper height="45rem" direction={1400}>
+          <HorizontalWrapper height="12rem" direction={800}>
             <div className="cards" style={{ right: 0 }}>
               {cards.map((card, index) => {
                 return (
@@ -70,14 +70,14 @@ export default function Home() {
           <TextSection />
         </SectionLayout>
         <SectionLayout>
-          <motion.div className="video" ref={video} style={{ opacity, scale }}>
+          {/* <motion.div className="video" ref={video} style={{ opacity, scale }}>
             <iframe
               src="https://www.youtube.com/embed/T6tc7TT13is&t=5142s"
               title="youtube video"
               allow="acceleromater; autoplay;clipboard-write;encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-          </motion.div>
+          </motion.div> */}
         </SectionLayout>
         <SectionLayout>
           <ZoomSection></ZoomSection>
@@ -98,7 +98,7 @@ const MainStyled = styled.main`
   .cards {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(5, 30rem);
+    grid-template-columns: repeat(5, 15rem);
     gap: 4rem;
   }
 

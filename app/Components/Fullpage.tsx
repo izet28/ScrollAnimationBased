@@ -48,15 +48,17 @@ function Fullpage() {
 
 const FullpageStyled = styled.div`
   .image {
-    width: calc(100% - 10rem);
-    height: 1000px;
+    width: 1200px;
+    height: 700px;
 
     position: relative;
     border-radius: 1rem;
-    border-radius: 8px;
+    border-radius: 5px;
 
     border: 1px solid var(--color-border);
     transition: border 0.3s ease-in-out;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     img {
       padding: 1.5rem;

@@ -81,8 +81,8 @@ function Header() {
             <Image
               src="/images/monkey.png"
               alt="hero"
-              width={600}
-              height={600}
+              width={350}
+              height={350}
               style={{ transform: imageHero.transform }}
             />
           </div>

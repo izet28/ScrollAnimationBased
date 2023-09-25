@@ -47,15 +47,22 @@ const CardStyled = styled.div`
   position: relative;
   background-color: var(--color-bg);
   height: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   border: 1px solid var(--color-border);
   transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover h3 {
+    color: white;
+  }
 
   .new {
     position: absolute;
-    top: 3rem;
-    right: 2.5rem;
+    top: 1.3rem;
+    right: 1.3rem;
     z-index: 5;
     background: #222260;
     color: #fff;
@@ -68,18 +75,22 @@ const CardStyled = styled.div`
 
   .text {
     position: absolute;
-    bottom: 3rem;
-    left: 2.5rem;
+    bottom: 1.3rem;
+    left: 1.3rem;
     z-index: 5;
     h3 {
       display: inline-block;
-      font-size: 1.5rem;
+      font-size: 0.9rem;
       color: #f2994a;
       background: var(--color-bg);
       padding: 0.2rem 1rem;
       border-radius: 30px;
       margin-bottom: 0.5rem;
       border: 1px solid var(--color-border);
+    }
+
+    p {
+      font-size: 0.7rem;
     }
   }
 

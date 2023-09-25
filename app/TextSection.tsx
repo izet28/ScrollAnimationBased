@@ -54,7 +54,7 @@ function TextSection() {
 
 const TextSectionStyled = styled.section`
   p {
-    font-size: 5rem;
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

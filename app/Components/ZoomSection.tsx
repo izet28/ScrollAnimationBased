@@ -10,6 +10,8 @@ function ZoomSection() {
   const hover = Hover3d(hero, { x: -5, y: 10, z: 4 });
   const hover2 = Hover3d(hero, { x: 50, y: 20, z: 7 });
   const hover3 = Hover3d(hero, { x: -40, y: -20, z: -5 });
+  const hover4 = Hover3d(hero, { x: 40, y: 20, z: 5 });
+  const hover5 = Hover3d(hero, { x: -50, y: -20, z: -7 });
 
   return (
     <ZoomStyled ref={hero}>
@@ -39,26 +41,52 @@ function ZoomSection() {
           src="/images/arm2.jpg"
           alt="buble tree"
           className="monkey"
-          width={500}
-          height={500}
+          width={250}
+          height={250}
           style={{
             objectFit: "cover",
             objectPosition: "50% 0%",
             transform: hover2.transform,
-            transition: hover3.transition,
+            transition: hover2.transition,
           }}
         />
         <Image
           src="/images/arm.jpg"
           alt="monkey2"
           className="smoke"
-          width={500}
-          height={500}
+          width={250}
+          height={250}
           style={{
             objectFit: "cover",
             objectPosition: "50% 0",
             transform: hover3.transform,
             transition: hover3.transition,
+          }}
+        />
+        <Image
+          src="/images/arm.jpg"
+          alt="monkey2"
+          className="beef"
+          width={250}
+          height={250}
+          style={{
+            objectFit: "cover",
+            objectPosition: "50% 0",
+            transform: hover4.transform,
+            transition: hover4.transition,
+          }}
+        />
+        <Image
+          src="/images/arm2.jpg"
+          alt="buble tree"
+          className="dokey"
+          width={250}
+          height={250}
+          style={{
+            objectFit: "cover",
+            objectPosition: "50% 0%",
+            transform: hover2.transform,
+            transition: hover2.transition,
           }}
         />
       </div>
@@ -88,6 +116,17 @@ const ZoomStyled = styled.div`
       position: absolute;
       top: 10%;
       left: 3rem;
+    }
+    .beef {
+      position: absolute;
+      bottom: 10%;
+      left: 3rem;
+    }
+
+    .dokey {
+      position: absolute;
+      bottom: 10%;
+      right: 3rem;
     }
   }
 `;

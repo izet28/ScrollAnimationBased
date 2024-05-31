@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: faris94/web:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000

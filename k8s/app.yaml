@@ -18,3 +18,5 @@ spec:
         image: faris94/web:2
         ports:
         - containerPort: 3000
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""

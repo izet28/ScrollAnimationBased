@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build and Push Docker Image') {
             environment {
-                DOCKER_IMAGE = "faris94/web:${BUILD_NUMBER}" ## replace the DockerHub account name with yours 
+                DOCKER_IMAGE = "faris94/web:${BUILD_NUMBER}" 
                 DOCKERFILE_LOCATION = "./Dockerfile"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
             }

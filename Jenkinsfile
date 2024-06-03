@@ -29,19 +29,30 @@ pipeline {
                     docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
                         dockerImage.push()
                     }
-                    sh 'mkdir other'
                 }
             }
         }
 
          stage('Trivy Image Scan') {
-      steps {
-        dir("others") {
-          sh 'curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.18.3'
-          sh 'curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl > html.tpl'
-          sh 'unset GITHUB_TOKEN && TRIVY_INSECURE=true trivy image --ignore-unfixed --vuln-type os,library --exit-code 1 --severity CRITICAL ${dockerImage}'
-        }
-      }
+            environment {
+                TRIVY_VERSION = "v0.18.3"
+                TRIVY_PATH = "${env.WORKSPACE}/trivy"
+                IMAGE = "faris94/web:${BUILD_NUMBER}" 
+    }
+             steps {
+                sh '''
+                    mkdir -p ${TRIVY_PATH}
+                    curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ${TRIVY_PATH} ${TRIVY_VERSION}
+                '''
+                script {
+                    env.PATH = "${TRIVY_PATH}:${env.PATH}"
+                     withEnv(['TRIVY_INSECURE=true']) {
+                        sh '''
+                            unset GITHUB_TOKEN
+                            trivy image --ignore-unfixed --vuln-type os,library --exit-code 1 --severity CRITICAL $IMAGE
+                        '''
+                }
+            }
     }
 
         

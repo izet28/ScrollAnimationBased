@@ -29,24 +29,29 @@ pipeline {
         //     }
         // }
 
+        
         stage('Update Deployment File') {
-            environment {
-                GIT_REPO_NAME = "ScrollAnimationBased"
-                GIT_USER_NAME = "izet28"
-            }
-            steps {
-                withCredentials([string(credentialsId: 'izet28', variable: 'GITHUB_TOKEN')]) {
-                    sh '''
-                        git config user.email "zetcoin29@gmail.com" 
-                        git config user.name "izet28"            
-                        OLD_BUILD_NUMBER=$((${BUILD_NUMBER}-1))
-                        sed -i "s/${OLD_BUILD_NUMBER}/${BUILD_NUMBER}/g" k8s/deployment.yml
-                        git add k8s/deployment.yml
-                        git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                        git push @github.com/${GIT_USER_NAME}/${GIT_REPO_NAME">https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-                    '''
-                }
+    environment {
+        GIT_REPO_NAME = "ScrollAnimationBased"
+        GIT_USER_NAME = "izet28"
+    }
+    steps {
+        script {
+            sshagent(['izet28']) {
+                sh '''
+                    git config user.email "zetcoin29@gmail.com" 
+                    git config user.name "izet28"            
+                    OLD_BUILD_NUMBER=$((${BUILD_NUMBER}-1))
+                    sed -i "s/${OLD_BUILD_NUMBER}/${BUILD_NUMBER}/g" k8s/deployment.yml
+                    git add k8s/deployment.yml
+                    git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                    git push git@github.com:${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main
+                '''
             }
         }
+    }
+}
+
+
      }
 }

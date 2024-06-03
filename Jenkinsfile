@@ -44,11 +44,11 @@ pipeline {
                     mkdir -p ${TRIVY_PATH}
                     curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ${TRIVY_PATH} ${TRIVY_VERSION}
                 '''
-                sh 'trivy --download-db-only'
                 script {
                     env.PATH = "${TRIVY_PATH}:${env.PATH}"
                      withEnv(['TRIVY_INSECURE=true']) {
                         sh '''
+                            trivy --download-db-only
                             unset GITHUB_TOKEN
                             trivy image --ignore-unfixed --vuln-type os,library --exit-code 1 --severity CRITICAL $IMAGE
                         '''

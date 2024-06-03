@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: faris94/web:2
+        image: faris94/web:13
         ports:
         - containerPort: 3000
       nodeSelector:

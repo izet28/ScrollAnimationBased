@@ -19,4 +19,4 @@ spec:
         ports:
         - containerPort: 3000
       nodeSelector:
-        roles: worker
+       kubernetes.io/role: worker 

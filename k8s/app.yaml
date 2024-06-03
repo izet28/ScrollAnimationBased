@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: faris94/web:latest
+        image: faris94/web:2
         ports:
         - containerPort: 3000

@@ -42,8 +42,8 @@ pipeline {
                     git config user.email "zetcoin29@gmail.com" 
                     git config user.name "izet28"            
                     OLD_BUILD_NUMBER=$((${BUILD_NUMBER}-1))
-                    sed -i "s/${OLD_BUILD_NUMBER}/${BUILD_NUMBER}/g" ./k8s/app.yml
-                    git add ./k8s/app.yml
+                    sed -i "s/${OLD_BUILD_NUMBER}/${BUILD_NUMBER}/g" /k8s/app.yml
+                    git add /k8s/app.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push git@github.com:${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main
                 '''

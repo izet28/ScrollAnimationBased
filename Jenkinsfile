@@ -139,7 +139,7 @@ ambil() {
 
 echo "menunggu aplikasi siap di port $PORT..."
 for i in $(seq 1 30); do
-    if ambil "http://127.0.0.1:$PORT/"; then
+    if ambil "http://12.105.0.1:$PORT/"; then
         echo "sehat pada percobaan ke-$i"
         exit 0
     fi

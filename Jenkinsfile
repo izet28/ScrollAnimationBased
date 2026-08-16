@@ -28,7 +28,7 @@
                       docker run -d --name uji-${BUILD_NUMBER} ${IMAGE}:${TAG}
 
                       for i in $(seq 1 30); do
-                          if docker exec uji-${BUILD_NUMBER} wget -q -O /dev/null http://127.0.0.1:3000/ 2>/dev/null; then
+                          if docker exec uji-${BUILD_NUMBER} wget -q -O /dev/null http://127.0.0.1:4000/ 2>/dev/null; then
                               echo "Aplikasi menjawab pada percobaan ke-$i"
                               exit 0
                           fi

@@ -104,7 +104,7 @@ echo '$RP' | docker login '$REGISTRY' -u '$RU' --password-stdin
 docker pull '$IMAGE:$TAG'
 
 docker rm -f '$APP' >/dev/null 2>&1 || true
-docker run -d --name '$APP' --restart unless-stopped -p $PORT:3000 '$IMAGE:$TAG'
+docker run -d --name '$APP' --restart unless-stopped -p $PORT:$PORT '$IMAGE:$TAG'
 
 docker logout '$REGISTRY' >/dev/null 2>&1 || true
 echo "container $APP jalan di $VM dari $IMAGE:$TAG"
